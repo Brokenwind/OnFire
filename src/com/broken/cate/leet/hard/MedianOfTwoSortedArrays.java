@@ -15,7 +15,7 @@ import java.util.Arrays;
  */
 public class MedianOfTwoSortedArrays {
         public static void main(String[] args) {
-            
+
         }
         public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
             int m = nums1.length, n = nums2.length, left = (m + n + 1) / 2, right = (m + n + 2) / 2;
