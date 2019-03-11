@@ -12,10 +12,11 @@ public class KthLargestElementInArray {
         int i = start;
         int j = end + 1;
         while (i <= j) {
-            while (++i < end && nums[i] <= selected) ;
-            while (i < --j && nums[j] >= selected) ;
+            while (++i <= end && nums[i] >= selected) ;
+            while (i <= --j && nums[j] <= selected) ;
             System.out.printf("%d, %d, %d\n", i, j, k);
-            swap(nums, i, j);
+            if (i < j)
+                swap(nums, i, j);
         }
 
         swap(nums, start, j);
@@ -36,8 +37,8 @@ public class KthLargestElementInArray {
     }
 
     public static void main(String[] args) {
-        //int[] nums = {3, 2, 3, 1, 2, 4, 5, 5, 6};
-        int[] nums = {3, 2};
+        int[] nums = {3, 2, 3, 1, 2, 4, 5, 5, 6};
+        //int[] nums = {2, 1,0};
         System.out.println(findKthLargest(nums, 2));
     }
 
